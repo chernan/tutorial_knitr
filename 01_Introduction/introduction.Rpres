@@ -1,0 +1,31 @@
+Generating dynamic documents (in R) with knitR
+========================================================
+author: Celine Hernandez
+date: 22/01/2015
+transition: linear
+
+Why a presentation on knitR ?
+========================================================
+
+- Follow-up on Felipe's presentation on **iPython notebooks**
+- A similar tool exists for **R**
+- **Requests** from misc. people
+
+
+
+Outline
+========================================================
+
+1. Introduction
+1. RStudio basics
+1. knitR and RMarkdown
+1. Dynamic documents
+1. Conclusion
+
+Before we move on
+========================================================
+incremental:true
+- https://github.com/chernan/tutorial_knitr.git
+- Easily downloadable with RStudio
+- This presentation was made by only using RStudio and knitR/RMarkdown
+
