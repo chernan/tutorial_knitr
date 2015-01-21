@@ -1,0 +1,100 @@
+---
+title: "Hello bioinfo"
+author: "Celine Hernandez"
+date: "21 Jan 2015"
+output:
+  html_document:
+    toc: yes
+---
+
+Introduction
+-----------
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+### Mixing R and Markdown : a simple example
+
+Some text... and a chunk of R code.
+
+```{r}
+7*6
+```
+
+How to generate the document
+---------------------------------
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### Include any plot 
+
+Just like you would create in a normal analysis.
+
+```{r}
+library(ggplot2)
+qplot(x = Species, y = Petal.Length, data = iris, geom = c("boxplot", "jitter"), colour = Species)
+```
+
+### Cache long chunks
+
+If a step is taking too long to be executed, you can also cache its result. The chunk will only be executed if its code changes.
+
+```{r, eval=FALSE}
+plot(runif(n = 100000, 0, 10), rnorm(100000, 5, 0.7),
+     pch=16, col=rgb(0.2, .5, 0.2, 0.1), main="Uniform vs normal")
+
+```
+
+### Include code from other languages
+
+You're not limited to R chunks! You can also include: Rcpp, Python, Awk, Ruby, Haskell, Bash, Perl, Graphviz, TikZ, SAS, Scala, and CoffeeScript, etc. More information on the knitR website (http://yihui.name/knitr/demo/engines/).
+
+
+#### C++
+
+For instance, with Rcpp, you can include C++ functions and make them available in R code while taking advantage of the speed of C++.
+
+```{r, engine='Rcpp'}
+#include <Rcpp.h>
+
+// [[Rcpp::export]]
+int fibonacci(const int x) {
+    if (x == 0 || x == 1) return(x);
+    return (fibonacci(x - 1)) + fibonacci(x - 2);
+}
+```
+
+```{r, eval=FALSE}
+fibonacci(10L)
+fibonacci(20L)
+```
+
+#### Python
+
+```{r, engine='python'}
+x = 'hello, python world!'
+print(x)
+print(x.split(' '))
+```
+
+#### Bash
+
+```{r, engine='bash'}
+echo hello world
+echo 'a b c' | sed 's/ /\|/g'
+# number of lines
+awk 'END{print NR;}' examples_knitR_RMarkdown.Rmd
+```
+
+
