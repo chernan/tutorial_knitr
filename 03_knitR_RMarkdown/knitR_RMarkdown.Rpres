@@ -1,0 +1,66 @@
+knitR / RMarkdown
+========================================================
+author: 
+date: 
+
+Dynamic?
+========================================================
+right: 70%
+![knitR logo](images/knit-logo.png)
+***
+- Dynamically generate reports
+- Reports can also be interactive
+
+Litterate programming
+========================================================
+
+Based on the idea of mixing in one document
+- The **text** of the document
+- The **code** to generate some elements (e.g. figures)
+- For better reproducibility
+
+When can it be useful?
+- Lab book / notebook
+- Reporting, for collaborators
+- Writing articles
+
+knitR
+========================================================
+ (pronounce "neater")
+- Is an R package
+- Developped by Yihui Xie
+- http://yihui.name/knitr/
+- As a successor to Sweave
+
+RMarkdown (*.Rmd)
+========================================================
+- Is one of the **formats** knitR can transform
+- Rmd = Markdown + R
+- Other formats include 
+ - Rnw = LaTeX + R (nice with LyX)
+ - RHTML = HTML + R
+ - Rd (to create documentation)
+ - Rpres (to create presentations)
+
+Markdown introduction
+========================================================
+- Free text with a bit of formating.
+- Headers with multiple # at the beginning of the line.
+- _Italic_ **Bold**
+- Include images, static tables, URLs
+- Nice equations 
+  $$\iint r(\cos\varphi+\sin\varphi)\,d\varphi\,dr$$
+
+Combining with R code
+========================================================
+- Introducing code chunks
+- A short list of parameters
+ - echo (true, false) : display the code along with its result
+ - fig.width / fig.height : change figure size
+ - eval (true/false) : execute a code chunk
+- Autocompletion in RStudio
+
+Combining with other code engines
+========================================================
+- knitR is not limited to interpreting R code in chunks
+- Also includes : 
