@@ -1,0 +1,31 @@
+RStudio basics
+========================================================
+author: 
+date: 
+
+RStudio
+========================================================
+
+Main window is divided into four parts
+- Console
+- Source (auto-completion, dynamic help, pipe into console)
+- 2 sets of tabs, customizable, including 
+ - Files
+ - Environment
+ - History
+ - Plots
+
+Integration with Git and Github
+========================================================
+
+- Creation of a new project from the Github repository url
+- The Git tab
+ - List modified files, diff
+ - Rename
+ - Stage/commit modifications easily (whole files or sub)
+ - Browse history and branches
+
+Miscellaneous others
+========================================================
+- Debugger
+- Shiny apps integration
