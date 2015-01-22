@@ -37,7 +37,7 @@ RMarkdown (*.Rmd)
 - Is one of the **formats** knitR can transform
 - Rmd = Markdown + R
 - Other formats include 
- - Rnw = LaTeX + R (nice with LyX)
+ - Rnw = LaTeX + R (nice with LyX, TeXShop...)
  - RHTML = HTML + R
  - Rd (to create documentation)
  - Rpres (to create presentations)
