@@ -3,6 +3,7 @@ title: "Hello bioinfo"
 author: "Celine Hernandez"
 date: "21 Jan 2015"
 output:
+  word_document: default
   html_document:
     toc: yes
 ---
@@ -50,7 +51,7 @@ qplot(x = Species, y = Petal.Length, data = iris, geom = c("boxplot", "jitter"),
 
 If a step is taking too long to be executed, you can also cache its result. The chunk will only be executed if its code changes.
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, cache=TRUE}
 plot(runif(n = 100000, 0, 10), rnorm(100000, 5, 0.7),
      pch=16, col=rgb(0.2, .5, 0.2, 0.1), main="Uniform vs normal")
 

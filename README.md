@@ -1,1 +1,1 @@
-# tutorial_knitr
+Bioinformatics presentation at ENS, Thrusday 22/01/2015.

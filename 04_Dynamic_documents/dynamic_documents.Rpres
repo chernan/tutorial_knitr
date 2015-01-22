@@ -6,10 +6,15 @@ date:
 GoogleViz
 ========================================================
 
-Need to install the corresponding package (googleViz, from CRAN).
-- Create interactive elements (tables)
+- Need to install the corresponding package (googleViz, from CRAN).
+- Create interactive elements (sortable tables, plots with tooltips)
+- Embedded in an HTML document
+- But need an Internet connection as data are "shaped" on Google servers.
 
 
 Shiny elements
 ========================================================
 
+- Shiny allows to include widgets
+- I/O modify plot rendering on-the-fly
+- Needs a small server to be on, but everything is available transparently in RStudio
