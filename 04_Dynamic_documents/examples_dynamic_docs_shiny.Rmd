@@ -1,0 +1,76 @@
+---
+title: "Examples of dynamic documents: shiny"
+author: "Celine Hernandez"
+date: "21 Jan 2015"
+output: html_document
+runtime: shiny
+---
+
+This R Markdown document is made interactive using Shiny. Unlike the more traditional workflow of creating static reports, you can now create documents that allow your readers to change the assumptions underlying your analysis and see the results immediately. 
+
+To learn more, see [Interactive Documents](http://rmarkdown.rstudio.com/authoring_shiny.html).
+
+## A simple example : histogram and bin number
+
+This example shows how to create a dynamic histogram, allowing users to choose and modify the bin number, and directly see the impact on the displayed plot. 
+
+You can embed Shiny inputs and outputs in your document. Outputs are automatically updated whenever inputs change.  This demonstrates how a standard R plot can be made interactive by wrapping it in the Shiny `renderPlot` function. The `sliderInput` function create the input widgets used to drive the plot.
+
+Here, we use once more the famous "iris" dataset (available in R by default), in order to demonstrate how to create one simple input slider, and a depending plot. The slider has an identifier `sliderBins` that can be used inside renderPlot in order to access its value with `input$sliderBins`
+
+```{r, echo = FALSE}
+# Define a slider with id: sliderBins
+sliderInput("sliderBins", "Select a number of bins:", min = 1, max = 50, value = 4)
+
+renderPlot({
+  x <- iris[, 3]  # Old iris data
+  # Create the sequence of values delimiting the bins
+  bins <- seq(min(x), max(x), length.out = input$sliderBins + 1)
+
+  # draw the histogram with the specified number of bins
+  hist(x, breaks = bins, col = 'darkgray', border = 'white', main=paste0("Histogram of ", names(iris)[3]), sub="Dataset:iris")
+})
+```
+
+## Multiple inputs
+
+Another example combining two inputs and a slightly more complex plot. This example uses the 'faithful' dataset on geyser data.
+
+```{r, echo=FALSE}
+inputPanel(
+  selectInput("n_breaks", label = "Number of bins:",
+              choices = c(10, 20, 35, 50), selected = 20),
+  
+  sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+              min = 0.2, max = 2, value = 1, step = 0.2)
+)
+
+renderPlot({
+  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
+       xlab = "Duration (minutes)", main = "Geyser eruption duration")
+  
+  dens <- density(faithful$eruptions, adjust = input$bw_adjust)
+  lines(dens, col = "blue")
+})
+```
+
+## Embedded Application
+
+It's also possible to embed an entire Shiny application within an R Markdown document using the `shinyAppDir` function. This example embeds a Shiny application located in another directory:
+
+```{r, echo=FALSE}
+shinyAppDir(
+  system.file("examples/06_tabsets", package="shiny"),
+  options=list(
+    width="100%", height=550
+  )
+)
+```
+
+Note the use of the `height` parameter to determine how much vertical space the embedded application should occupy.
+
+You can also use the `shinyApp` function to define an application inline rather then in an external directory.
+
+In all of R code chunks above the `echo = FALSE` attribute is used. This is to prevent the R code within the chunk from rendering in the document alongside the Shiny components.
+
+
