@@ -27,5 +27,5 @@ Before we move on
 incremental:true
 - https://github.com/chernan/tutorial_knitr.git
 - Easily downloadable with RStudio
-- This presentation was made by only using RStudio and knitR/RMarkdown
+- This presentation was made by only using RStudio and knitR/Rpres
 
