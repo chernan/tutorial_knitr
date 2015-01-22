@@ -1,1 +1,1 @@
-Bioinformatics presentation at ENS, Thrusday 22/01/2015.
+Bioinformatics presentation at ENS, Thursday 22/01/2015.
