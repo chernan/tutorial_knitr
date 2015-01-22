@@ -14,7 +14,7 @@ Literate programming
 Based on the idea of mixing in one document
 - The **text** of the document
 - The **code** to generate some elements (e.g. figures)
-- For better reproducibility
+- For better explanation and reproducibility
 
 When can it be useful?
 - Lab book / notebook
